@@ -1,0 +1,83 @@
+WADE files are files that store level information for Raycaster.
+
+WADE stands for "WAD files but Even worse."
+
+You can run a WADE file by running 'java Raycaster level.wade'
+
+All WADE files must start with the line "This is a WADE file! Not a PNG!", otherwise it will not run
+
+Levels are defined using the "level" command, and walls are represented by the number.
+
+In this example, we have a level that is 3 units wide, and 3 units long.
+
+
+"""
+level 3 3
+111
+101
+111
+endlevel
+"""
+
+Walls are represented by a number thats 0-9
+
+Walls are defined using "wall"
+
+
+In this example, wall[1] is being defined as being 28 long, and 12 wide, and is in the pattern of a brick wall.
+
+"""
+wall 1 28 12
+1111011111101111110111111011
+1111011111101111110111111011
+0000000000000000000000000000
+1101111110111111011111101111
+1101111110111111011111101111
+0000000000000000000000000000
+1111011111101111110111111011
+1111011111101111110111111011
+0000000000000000000000000000
+1101111110111111011111101111
+1101111110111111011111101111
+0000000000000000000000000000
+1111011111101111110111111011
+1111011111101111110111111011
+endwall
+"""
+
+Colors are defined by palettes.
+
+palettes are how colors are defined and stored in WADE files. 
+Only one palette can be present in a file.
+palettes hold 10 colors, each one represented by a number 0-9
+
+A palette does not have to be defined for the WADE file to run, the default palette is shown below.
+
+
+"""
+palette
+0 FFFFFF
+1 FF0000
+2 FFA500
+3 FFFF00
+4 00FF00
+5 0000FF
+6 4B0082
+7 7F00FF
+8 23B0FF
+9 000000
+endpalette
+"""
+
+To set the color of sky and floor, use the following commands with the color palette number you want to use.
+"""
+sky 8
+floor 8
+"""
+
+To set where a player starts, use the following command:
+"""
+start 1 1 0
+"""
+
+the first number is the x of the grid, and the second number is the y. the third number is the intial orientation in radians. the third number can be a double.
